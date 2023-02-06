@@ -2,7 +2,6 @@
 base_url = "https://tattered.pages.dev"
 
 # Site title & description
-title = "tattered pages"
 description = "a little hub of home"
 
 # Whether to automatically compile all Sass files in the sass directory
@@ -37,3 +36,6 @@ even_menu = [
 
 # Math support
 katex_enable = true
+
+# title?
+even_title = "tattered pages"
