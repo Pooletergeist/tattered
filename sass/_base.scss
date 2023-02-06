@@ -1,5 +1,5 @@
 html {
-  font-size: 32px;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
@@ -9,6 +9,7 @@ body {
   background: #fefefe;
   border-top: 3px solid $main-colour;
   overflow-y: scroll;
+  font-size: 32px;
 }
 
 .container {
