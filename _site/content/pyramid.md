@@ -1,5 +1,5 @@
 +++
-title = "Pyramid how-to"
+title = "Pyramid How-To"
 date = 2022-03-21
 
 [taxonomies]
@@ -8,11 +8,6 @@ tags = ["placeholder posts", "tag1"]
 +++
 
 # The Road To Counting Pyramid:
-When I was TAing an intro CS course, this was often a hard exercise for folks.
-Fortunately, we can do hard things! Once you've seen some examples, I have
-faith you can make pyramids up there with the [best of
-them](https://en.wikipedia.org/wiki/Sneferu#Building_projects).
-
 We want procedure `def number_pyramid(height)` that takes a positive
 integer height and then prints a series of lines that form a pyramid of digits, like so (with dots instead of spaces for clarity):
 ```
@@ -47,7 +42,7 @@ We're going to build up to it by solving 3 smaller problems.
 3. Star Pyramid
 
 ```
-....*. 	     # line 1
+....*. 	  # line 1
 ...*.*.      # line 2
 ..*.*.*.     # line 3
 .*.*.*.*.    # line 4
@@ -57,10 +52,7 @@ We're going to build up to it by solving 3 smaller problems.
 Combining the lessons from each, we'll have no trouble with a counting pyramid
 
 ## Star Grid
-- Make a line of stars with a loop. 
-- Nest line-making inside a second loop to repeat line-making many
-  times!
-
+### *Insight: make a line with a loop, repeat by nesting line-making under another loop.*
 We want many lines of stars.
 ```
 *****
@@ -69,8 +61,7 @@ We want many lines of stars.
 *****
 *****
 ```
-Making a line of stars is best done with a loop. You want to print a star *many
-times*. Whenever you do something *many times* you should think to make a loop. 
+Making a line of stars can be done with a shortcut: `"*" * line_length`. But under the hood, that shortcut translates into a loop. And to customize our lines later, we'll want control over the loop. So, we write:
 ```python
 ### Line-Maker
 line_length = 5 # number of stars in line.
@@ -80,12 +71,7 @@ while n_stars_added < line_length:
     line += "*"
 print(line)
 ```
-We could run this code and get a line of 5 stars: 
-```
-*****
-```
-If we want several lines of stars, we can nest this line-maker code inside a
-second loop to repeat its execution.
+We could run this code and get a line of 5 stars: `*****`. If we want several lines, we can nest this line-maker code under a loop to repeat its execution.
 ```python
 ### Grid-Maker
 line_length = 5 # number of stars in line.
@@ -95,29 +81,11 @@ while n_lines_added < total_lines: # outer loop
     ### Line-Maker Code
     line = ""
     n_stars_added = 0
-    while n_stars_added < line_length: # inner loop
+    while n_stars_added < line_length:
         line += "*"
-        n_stars_added += 1
     print(line)
-    n_lines_added += 1
 ```
-We start from the top, defining `line_length, total_lines, and
-n_lines_added`. Reaching the outer loop, we see that `n_lines_added=0 < total
-lines=6`, and continue to the nested line-maker code. The line-maker code starts a new empty string with `line=""`. We fill the line with stars using the inner loop, and print the completed line. 
-```
-*****
-```
-Then, we return to the outer loop (since we've finished the nested bit), check
-the condition `n_lines_added=1 < total_lines=6`, and proceed again into the
-line-maker code! We start a new empty line, fill it with stars, and print. Now,
-the line-maker code has been run twice, so we've printed:
-```
-*****
-*****
-```
-But the outer loop isn't done! We return to the outer loop, check the
-condition, start a new empty line, fill it with stars, print, return to
-the outer loop, start a new empty line,... you get the idea. Now, we can run it and get a grid of stars. With `line_length=5` and `total_lines=6`, we get:
+Each run of the outer loop, we start a new empty line; then we use the inner loop to fill the line with stars; and then we print the completed line. Now, we can run it and get a grid of stars. With `line_length=5` and `total_lines=6`, we get:
 ```
 *****
 *****
@@ -126,12 +94,11 @@ the outer loop, start a new empty line,... you get the idea. Now, we can run it 
 *****
 *****
 ```
-Great! We've seen we can make a line with a loop, and repeat line-making by
-nesting one loop inside another loop!
+
 ## Star Pyramid
 ### *Insight: a pyramid is just a grid with some blank spaces*
 ```
-....*. 	     # line 1
+....*. 	  # line 1
 ...*.*.      # line 2
 ..*.*.*.     # line 3
 .*.*.*.*.    # line 4
@@ -158,10 +125,10 @@ def star_pyramid(height):
 ```
 
 ## Counting Grid
-### *Insight: Add a counter. Instead of stars, add the counter value when filling-out lines*
+### *Insight: Add a counter*
 We're gonna go back to the grid, so we don't spoil the final counting pyramid problem. But the idea is that since we build out the lines with a loop, one symbol at a time, we can change whatever symbol we're adding.
 
-Our old grid-maker code changes in only three places, marked with #'s.
+Our old grid-maker code changes in only two places, marked with red #'s.
 ```python
 ### Grid-Maker
 line_length = 5
@@ -170,15 +137,14 @@ n_lines_added = 0
 while n_lines_added < total_lines:
     ### Line-Maker Code
     line = ""
-    digit = 0 # we add a variable for which digit to print
+	digit = 0 # we add a variable for which digit to print
     n_digits_added = 0
     while n_digits_added < line_length:
         line += str(digit) # we put a digit in the line instead of a star
-        digit = (digit + 1) % 10 # we increase the digit
+		digit = (digit + 1) % 10 # we increase the digit
     print(line)
 ```
-The `% 10` turns `10` into `0`so we can count up again, always adding a single
-digit `0-9` and never disrupting our symmetry by printing a two-digit number.
+The `% 10` turns `10` into `0`so we always only add a single digit `0-9` and never disrupt our symmetry by printing a two-digit number.
 
 ```
 0.1.2.3.4.
@@ -195,7 +161,7 @@ tada!
 ---
 
 
-## Same thing but less-edited and with Helper Functions
+## Same thing but with Helper Functions
 Everything below this is just the same code as above, styled as helper functions instead of one snippet. Unlcear if it's more or less confusing.
 
 ### Star-Grid:
@@ -295,7 +261,7 @@ def line_printer(line_length, prefix_spaces): # prefix_spaces is the number of s
 We can call `line_printer(2, 3, 4)` to print a line with 4 spaces, then 2 digits: `....3.4.`
 #### How many spaces should we add?
 ```
-....*. 	     # line 1
+....*. 	  # line 1
 ...*.*.      # line 2
 ..*.*.*.     # line 3
 .*.*.*.*.    # line 4

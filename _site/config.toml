@@ -4,9 +4,6 @@ base_url = "https://tattered.pages.dev"
 # Site title & description
 description = "a little hub of home"
 
-# Whether to hard link files in static directory instead of copy - breaks
-#hard_link_static = true
-
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 

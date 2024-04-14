@@ -1,15 +1,20 @@
 +++
-title = "Free static sites with Zola and Cloudflare"
+title = "Free static sites with Zola and Cloudfare"
 date = 2022-02-11
 
 [taxonomies]
 categories = ["How-to"]
 +++
 
+# Blog-building with Zola
+
+## (we love rust)
+
+### ((so much))
+
 ### Meaningless Recipe Pre-amble
 I tried jekyll and github pages for 20ish hours. It didn't go well.
-I saw two friends with zola blogs
-([link-deprecated:1](https://nihilistkitten.me/) \& [link-deprecated:2](https://willm.how/blog/site-notes/)) and thought "what the heck?" Turns out, Zola is great. Cloudflare has a nice hook for it, and it all just sorta works.
+I saw two friends with zola blogs ([1](https://nihilistkitten.me/) \& [2](https://willm.how/blog/site-notes/)) and thought "what the heck?" Turns out, Zola is great. Cloudflare has a nice hook for it, and it all just sorta works.
 
 # Requirements
 - [Zola](https://www.getzola.org/) (for building the site)
@@ -31,7 +36,7 @@ zola serve
 ```
 from your main directory (the one with **config.toml**) lets you test things locally. Visit your site at: [http://127.0.0.1:1111](http://127.0.0.1:1111)
 
-3. deploy it via
+3. deploy it
 [Cloudfare's lovely docs](https://developers.cloudflare.com/pages/framework-guides/deploy-a-zola-site/#deploying-with-cloudflare-pages)
 
  
@@ -54,7 +59,7 @@ title = "some title"
 your text goes here!
 ```
 
-# Adding a Theme
+## Adding a Theme
 [Zola themes](https://www.getzola.org/themes/)
 Each theme has its own special installation instructions but most require 2 things.
 1. Add the theme to your repository. Git submodules are your friend here. If we were adding the theme "after-dark":
@@ -66,6 +71,3 @@ git submodule add https://github.com/getzola/after-dark.git
 ```
 theme = "after-dark"
 ```
-
-I've tried to emphasize necessary and salient details above. If that turns out
-insufficient, see all the code [here](https://github.com/Pooletergeist/tattered)
