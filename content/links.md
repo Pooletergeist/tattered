@@ -68,7 +68,14 @@ To link that post, I write `[link to picture post](@/picture-post/index.md)`
 which produces: [link to picture post](@/picture-post/index.md)
 
 If I want to write a link to a heading in that post, 
-[link to subheading](@/picture-post/index.md#what-if-I-want-to-re-use-the-same-image-on-multiple-pages) doesn't seem to work any better than just linking the post. Alas.
+[link to subheading](@/picture-post/index.md#what-if-i-want-to-re-use-the-same-image-on-multiple-pages)
+is produced via
+```
+[link to subheading](@/picture-post/index.md#what-if-i-want-to-re-use-the-same-image-on-multiple-pages)
+
+```
+Note the lack of punctuation in the link path, despite the heading ending with a
+questionmark. Also note that everything, including `I`, gets lowercased.
 
 
 
