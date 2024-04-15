@@ -3,7 +3,8 @@ title = "Free static sites with Zola and Cloudflare"
 date = 2022-02-11
 
 [taxonomies]
-categories = ["How-to"]
+categories = ["blog-building"]
+tags = ["zola"]
 +++
 
 ### Meaningless Recipe Pre-amble

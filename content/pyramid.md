@@ -4,7 +4,7 @@ date = 2022-03-21
 
 [taxonomies]
 categories = ["CS1"]
-tags = ["placeholder posts", "tag1"]
+tags = ["python"]
 +++
 
 # The Road To Counting Pyramid:

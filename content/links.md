@@ -6,8 +6,8 @@ draft = false # won't render unless --drafts passed
 insert_anchor_links = true # link local with [text](@/<pathfromcontent.md#heading>)
 
 [taxonomies]
-categories = ["Blog-building"]
-tags = ["placeholder posts", "tag1"]
+categories = ["blog-building"]
+tags = ["zola"]
 +++
 
 hello, world!

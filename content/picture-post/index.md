@@ -3,6 +3,10 @@ title = "Zola with images"
 date = 2023-10-05
 
 insert_anchor_links = true
+
+[taxonomies]
+categories = ["blog-building"]
+tags =["zola"]
 +++
 
 ![cute racoon peeking out of tree](test.png)
@@ -89,7 +93,7 @@ webpage with the markdown syntax:
 ```
 ![<verbal-description>](/img-directory/re-used-img.png)
 ```
-So, now that we're stylish:
+So, now that we're cool:
 ![stylishlion](/images/stylelion.jpg)
 ```
 ![stylishlion](/images/stylelion.jpg)
@@ -98,5 +102,5 @@ So, now that we're stylish:
 [^1]: Footnotes aren't guarenteed to be supported by [commonmark](@/picture-post/index.md#sources),
 but might be, depending on theme.
 
-[linktosubheading](@/picture-post/index.md#sources)
+[link to subheading: sources](@/picture-post/index.md#sources)
 

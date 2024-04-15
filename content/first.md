@@ -3,8 +3,8 @@ title = "First post"
 date = 2022-02-04
 
 [taxonomies]
-categories = ["Odd"]
-tags = ["placeholder posts", "tag1"]
+categories = ["blog-building"]
+tags = ["zola"]
 +++
 
 hello, world!
